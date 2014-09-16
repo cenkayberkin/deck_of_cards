@@ -9,22 +9,23 @@ describe Deck, "Testing basic deck of cards properties " do
   new_Deck = Deck.new
 
   it "has correct number of cards" do
-    new_Deck.size.to_s.must_match "52"
+    new_Deck = Deck.new
+    new_Deck.cards.size.to_s.must_match("52")
   end
 
-  it "must contain" do
-    assert_equal true, new_Deck.contains? "3C"
+  it "must contain card 3C" do
+    assert true == new_Deck.cards.include?("C3")
   end
 
-  it "must contain" do
-    assert_equal true, new_Deck.contains? "11C"
+  it "must contain card 11C" do
+    assert true == new_Deck.cards.include?("C11")
   end
 
-  it "must not contain" do
-    assert_equal false, new_Deck.contains? "14H"
+  it "must not contain card 14H" do
+    assert false == new_Deck.cards.include?("14H")
   end
 
-  it "must not contain" do
-    assert_equal false, new_Deck.contains? "4Z"
+  it "must not contain card 4Z" do
+    assert false == new_Deck.cards.include?("4Z")
   end
 end
