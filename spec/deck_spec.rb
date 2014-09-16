@@ -14,18 +14,18 @@ describe Deck, "Testing basic deck of cards properties " do
   end
 
   it "must contain card 3C" do
-    assert true == new_Deck.cards.include?("C3")
+    assert true == new_Deck.has_card?("C3")
   end
 
   it "must contain card 11C" do
-    assert true == new_Deck.cards.include?("C11")
+    assert true == new_Deck.has_card?("C11")
   end
 
   it "must not contain card 14H" do
-    assert false == new_Deck.cards.include?("14H")
+    assert false == new_Deck.has_card?("14H")
   end
 
   it "must not contain card 4Z" do
-    assert false == new_Deck.cards.include?("4Z")
+    assert false == new_Deck.has_card?("4Z")
   end
 end
