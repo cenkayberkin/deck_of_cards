@@ -7,7 +7,7 @@ class Deck
   end
 
   def create_cards
-    ['C','H','D','S'].each do |s|
+    %w(C H D S).each do |s|
       (1..13).each do |c|
         temp_card = Card.new(s + c.to_s)
         @cards << temp_card
@@ -24,8 +24,10 @@ class Deck
       p c.name
     end
   end
+
   public
-  def has_card?(cardName)
+
+  def card?(cardName)
     result = false
     @cards.each do |c|
       if c.name == cardName
@@ -44,7 +46,3 @@ class Card
     @name = name
   end
 end
-
-# d = Deck.new
-# p d.includes? "C9a"
-
